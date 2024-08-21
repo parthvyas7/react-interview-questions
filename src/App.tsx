@@ -48,7 +48,7 @@ function App() {
         <Divider />
         <Stack spacing={2}>
           <Typography variant="h3">Infinite scroll</Typography>
-          {data.map((it) => (
+          {data.map((it: { id: string; quote: string }) => (
             <Typography key={it.id} variant="h4">
               {it.quote}
             </Typography>
