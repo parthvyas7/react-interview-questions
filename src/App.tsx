@@ -11,7 +11,7 @@ import { useState } from "react";
 import { SelectComponent } from "./components";
 
 function App() {
-  const [choice, setChoice] = useState(-1);
+  const [choice, setChoice] = useState<number>(-1);
   const handleSelect = (selectedChoice: number) => {
     setChoice(selectedChoice);
   };
