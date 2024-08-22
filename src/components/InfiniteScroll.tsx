@@ -35,21 +35,21 @@ const InfiniteScroll = () => {
   return (
     <>
       <Stack spacing={2}>
-        <Typography variant="h3">Infinite scroll</Typography>
+        <Typography variant="h4">Infinite scroll</Typography>
         {data.map((it: { id: string; quote: string }) => (
-          <Typography key={it.id} variant="h4">
+          <Typography key={it.id} variant="h5">
             {it.quote}
           </Typography>
         ))}
         {loading && (
           <>
-            <Skeleton variant="rectangular" height={30} />
-            <Skeleton variant="rectangular" height={30} />
-            <Skeleton variant="rectangular" height={30} />
+            <Skeleton variant="rectangular" height={20} />
+            <Skeleton variant="rectangular" height={20} />
+            <Skeleton variant="rectangular" height={20} />
           </>
         )}
         <Button variant="contained" onClick={handleLoadData}>
-          More Quotes
+          Manual Fetch
           <ArrowDownward />
         </Button>
       </Stack>
