@@ -1,6 +1,6 @@
 {
-  "name": "react-ts-sandbox",
-  "private": true,
+  "name": "react-interview-questions",
+  "private": false,
   "version": "1.0.0",
   "type": "module",
   "scripts": {

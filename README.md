@@ -1,5 +1,7 @@
 # Commonly Asked React Interview Questions
 
-Commonly asked Entry level React/Frontend Machine coding round questions with solutions in JS/TS
+Practice React.js Machine Coding Round problems in React-Typescript (tsx)
+
+Do contribute by opening Issue/PR, if you find any missing problems that you have faced in your interview.
 
 [Visit](https://react-interview-questions-u855x.kinsta.page/)
