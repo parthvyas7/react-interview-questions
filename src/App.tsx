@@ -23,7 +23,7 @@ function App() {
     <>
       <Grid container spacing={2}>
         <Grid
-          xs={12}
+          md={12}
           display="flex"
           justifyContent="space-between"
           paddingX={2}
@@ -38,7 +38,7 @@ function App() {
               Commonly Asked React.js Interview Questions
             </Typography>
           </Link>
-          <Tooltip title="Github repo">
+          <Tooltip title="Star this repo">
             <IconButton
               size="large"
               component="a"
@@ -50,7 +50,7 @@ function App() {
             </IconButton>
           </Tooltip>
         </Grid>
-        <Grid xs={2}>
+        <Grid md={2}>
           <nav aria-label="main">
             <List>
               <ListItem>
@@ -67,7 +67,7 @@ function App() {
             </List>
           </nav>
         </Grid>
-        <Grid xs={10}>
+        <Grid md={10}>
           <SelectComponent choice={choice} />
         </Grid>
       </Grid>
