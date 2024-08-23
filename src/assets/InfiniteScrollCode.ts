@@ -1,3 +1,4 @@
+export const InfiniteScrollCode = `
 import {
   Button,
   Skeleton,
@@ -26,7 +27,7 @@ const InfiniteScroll = () => {
   const [showCode, setShowCode] = useState(false);
   const handleLoadData = useCallback(() => {
     setLoading(true);
-    fetch(`https://dummyjson.com/quotes?limit=3&skip=${skipRecords}`)
+    fetch(\`https://dummyjson.com/quotes?limit=3&skip=\${skipRecords}\`)
       .then((res) => res.json())
       .then((res) => {
         setData((data) => data.concat(res.quotes));
@@ -73,7 +74,7 @@ const InfiniteScroll = () => {
   return (
     <>
       <Box>
-        <Box display="flex" justifyContent="space-between" marginBottom={2}>
+        <Box display="flex" justifyContent="space-between">
           <Typography variant="h4">Infinite scroll</Typography>
           <ButtonGroup aria-label="Basic button group">
             <Tooltip title="Copy code">
@@ -93,18 +94,15 @@ const InfiniteScroll = () => {
             </Tooltip>
           </ButtonGroup>
         </Box>
-        {showCode && (
-          <Paper sx={{ borderRadius: "10px" }}>
-            <DisplayCode code={InfiniteScrollCode} />
-          </Paper>
-        )}
         {!showCode && (
-          <Paper sx={{ borderRadius: "10px" }}>
+          <Paper>
             <Stack
-              spacing={1}
+              spacing={2}
               padding={2}
+              marginY={2}
               display="flex"
               flexDirection="column"
+              alignItems="center"
             >
               {data.length === 0 && !loading && (
                 <Box
@@ -119,7 +117,6 @@ const InfiniteScroll = () => {
                   </Typography>
                 </Box>
               )}
-              
               {data.map((it: { id: string; quote: string }) => (
                 <Typography key={it.id} variant="h5">
                   {it.quote}
@@ -148,9 +145,16 @@ const InfiniteScroll = () => {
             </Box>
           </Paper>
         )}
+        {showCode && (
+          <Paper>
+            <DisplayCode code={InfiniteScrollCode} />
+          </Paper>
+        )}
       </Box>
     </>
   );
 };
 
 export default InfiniteScroll;
+
+`;

@@ -64,6 +64,11 @@ function App() {
                   <Chip label="New" />
                 </ListItemButton>
               </ListItem>
+              <ListItem>
+                <ListItemButton onClick={() => handleSelect()}>
+                  <ListItemText primary="New Problems coming soon..." />
+                </ListItemButton>
+              </ListItem>
             </List>
           </nav>
         </Grid>
