@@ -66,7 +66,7 @@ function App() {
               </ListItem>
               <ListItem>
                 <ListItemButton onClick={() => handleSelect()}>
-                  <ListItemText primary="New Problems coming soon..." />
+                  <ListItemText primary="New problems coming soon..." />
                 </ListItemButton>
               </ListItem>
             </List>

@@ -1,3 +1,4 @@
 import {InfiniteScrollCode} from './InfiniteScrollCode'
+import {PaginationCode} from './PaginationCode'
 
-export {InfiniteScrollCode}
+export {InfiniteScrollCode,PaginationCode}

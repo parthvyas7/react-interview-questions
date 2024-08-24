@@ -1,4 +1,4 @@
-import { Container, Typography, Box } from "@mui/material";
+import { Container, Typography, Box, Link } from "@mui/material";
 
 const Welcome = () => {
   return (
@@ -15,16 +15,24 @@ const Welcome = () => {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
-            height: "80vh",
+            height: "75vh",
           }}
         >
           <Typography variant="h4" textAlign="center">
-            Practice React.js Machine Coding Round problems in React-Typescript
-            (tsx)
+            Practice React.js Machine Coding Round problems in React-Typescript (tsx)
           </Typography>
           <Typography variant="h6" textAlign="center">
-            Do contribute by opening Issue/PR, if you find any missing/new
-            problem(s) that you have faced in your interview.
+            Do contribute by opening{" "}
+            <Link
+              underline="hover"
+              component="a"
+              href="https://github.com/parthvyas7/react-interview-questions/issues"
+              target="_blank"
+            >
+              Issue/PR
+            </Link>
+            , if you find any missing/new problem(s) that you have faced in your
+            interview.
           </Typography>
         </Container>
       </Box>

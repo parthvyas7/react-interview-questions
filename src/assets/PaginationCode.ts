@@ -1,109 +1,32 @@
-import { Box, Typography, ButtonGroup, Paper, Card } from "@mui/material";
-import ContentCopyIcon from "@mui/icons-material/ContentCopy";
-import CodeIcon from "@mui/icons-material/Code";
-import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
-import RestartAltIcon from "@mui/icons-material/RestartAlt";
-import { PaginationCode } from "../assets";
-import { useState, useEffect } from "react";
-import DoneIcon from "@mui/icons-material/Done";
-import DisplayCode from "./DisplayCode";
-import { Pagination as PaginationMUI } from "@mui/material";
-import CircularProgress from "@mui/material/CircularProgress";
-import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import { CardActionArea } from "@mui/material";
-import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
-import { Star } from "@mui/icons-material";
-
-const Pagination = () => {
-  interface rating {
-    rate: number;
-    count: number;
-  }
-  interface product {
-    id: number;
-    title: string;
-    description: string;
-    price: number;
-    category: string;
-    image: URL;
-    rating: rating;
-  }
-  const [products, setProducts] = useState([]);
-  const productsPerPage = 6;
-  const totalProducts = products.length;
-  const totalPages = Math.ceil(totalProducts / productsPerPage);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [loading, setLoading] = useState(false);
-  const [showCode, setShowCode] = useState(false);
-  const [copied, setCopied] = useState(false);
-  useEffect(() => {
-    setLoading(true);
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((res) => {
-        setProducts(res);
-      })
-      .catch((err) => console.error(err))
-      .finally(() => {
-        setLoading(false);
-      });
-  }, []);
-  const handleReset = () => {
-    setCurrentPage(1);
-  };
-  const handleShowCode = () => {
-    setShowCode(!showCode);
-  };
-  const handleCopyCode = () => {
-    navigator.clipboard
-      .writeText(PaginationCode)
-      .then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 500);
-      })
-      .catch((err) => {
-        console.error("Failed to copy: ", err);
-      });
-  };
-  const handlePageChange = (
+export const PaginationCode = `
+const [products, setProducts] = useState([]);
+const productsPerPage = 3;
+const totalProducts = products.length;
+const totalPages = Math.ceil(totalProducts / productsPerPage);
+const [currentPage, setCurrentPage] = useState(1);
+const [loading, setLoading] = useState(false);
+const [showCode, setShowCode] = useState(false);
+const [copied, setCopied] = useState(false);
+useEffect(() => {
+  setLoading(true);
+  fetch("https://fakestoreapi.com/products")
+    .then((res) => res.json())
+    .then((res) => {
+      setProducts(res);
+    })
+    .catch((err) => console.error(err))
+    .finally(() => {
+      setLoading(false);
+    });
+}, []);
+const handlePageChange = (
     event: React.ChangeEvent<unknown>,
     page: number
   ) => {
     setCurrentPage(page);
   };
-  return (
-    <>
-      <Box display="flex" justifyContent="space-between" marginBottom={2}>
-        <Typography variant="h4">Pagination</Typography>
-        <ButtonGroup aria-label="Basic button group">
-          <Tooltip title="Copy code">
-            <IconButton onClick={handleCopyCode}>
-              {copied ? <DoneIcon /> : <ContentCopyIcon />}
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Show code">
-            <IconButton onClick={handleShowCode}>
-              <CodeIcon />
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="Reset">
-            <IconButton onClick={handleReset}>
-              <RestartAltIcon />
-            </IconButton>
-          </Tooltip>
-        </ButtonGroup>
-      </Box>
-      {showCode && (
-        <Paper sx={{ borderRadius: "10px" }}>
-          <DisplayCode code={PaginationCode} />
-        </Paper>
-      )}
-      {!showCode && (
-        <Paper elevation={0} sx={{ borderRadius: "10px", padding: "20px" }}>
-          <Grid2 container spacing={2}>
+  <Paper >
+          <Grid2>
             {products.map((product: product) => {
               if (
                 product.id > (currentPage - 1) * productsPerPage &&
@@ -208,9 +131,4 @@ const Pagination = () => {
             />
           </Box>
         </Paper>
-      )}
-    </>
-  );
-};
-
-export default Pagination;
+`;
