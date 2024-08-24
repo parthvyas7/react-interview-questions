@@ -28,7 +28,7 @@ const Pagination = () => {
     description: string;
     price: number;
     category: string;
-    image: URL;
+    image: string;
     rating: rating;
   }
   const [products, setProducts] = useState([]);
@@ -72,6 +72,7 @@ const Pagination = () => {
     event: React.ChangeEvent<unknown>,
     page: number
   ) => {
+    console.log(event)
     setCurrentPage(page);
   };
   return (
