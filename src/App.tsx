@@ -5,7 +5,6 @@ import {
   Typography,
   ListItemText,
   Link,
-  Chip,
 } from "@mui/material";
 import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
 import { useState } from "react";
@@ -50,7 +49,10 @@ function App() {
             </IconButton>
           </Tooltip>
         </Grid>
-        <Grid md={2}>
+        <Grid
+          md={2}
+          sx={{ height: "85vh", position: "sticky", overflowY: "auto" }}
+        >
           <nav aria-label="main">
             <List>
               <ListItem>
@@ -70,7 +72,10 @@ function App() {
               </ListItem>
               <ListItem>
                 <ListItemButton onClick={() => handleSelect(3)}>
-                  <ListItemText primary="useWindowResize hook" secondary="New"/>
+                  <ListItemText
+                    primary="useWindowResize hook"
+                    secondary="New"
+                  />
                 </ListItemButton>
               </ListItem>
               <ListItem>

@@ -5,7 +5,7 @@ import {
   IconButton,
   Tooltip,
   Paper,
-  CircularProgress,
+  Skeleton,
 } from "@mui/material";
 import { useState, useEffect, useCallback } from "react";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
@@ -65,8 +65,7 @@ const UseFetch = () => {
   );
   const [showCode, setShowCode] = useState(false);
   const [copied, setCopied] = useState(false);
-  const handleReset = () => {
-  };
+  const handleReset = () => {};
   const handleShowCode = () => {
     setShowCode(!showCode);
   };
@@ -109,30 +108,30 @@ const UseFetch = () => {
         </Paper>
       )}
       {!showCode && (
-        <Paper sx={{ borderRadius: "10px", padding: "10px" }}>
-          <Card sx={{ maxWidth: 345, margin: "auto" }} onClick={refetch}>
-            <CardActionArea>
-              {loading ? (
-                <CircularProgress />
-              ) : (
-                <CardMedia
-                  component="img"
-                  objectFit="cover"
-                  height="345"
-                  image={data.image}
-                  alt={data.image}
-                  loading="lazy"
-                />
-              )}
-              {error && <Typography>{error.message}</Typography>}
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  Click me for another dish?
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        </Paper>
+        <Card sx={{ maxWidth: 345, margin: "auto" }} onClick={refetch}>
+          <CardActionArea>
+            {loading ? (
+              <Skeleton height={345} width={345} variant="rectangular" />
+            ) : (
+              // @ts-ignore
+              <CardMedia
+                component="img"
+                objectFit="cover"
+                height={345}
+                width={345}
+                // @ts-ignore
+                image={data.image}
+                loading="lazy"
+              />
+            )}
+            {error && <Typography>{error.message}</Typography>}
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Click me for another dish?
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </Card>
       )}
     </>
   );
