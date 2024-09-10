@@ -1,4 +1,5 @@
 import {InfiniteScrollCode} from './InfiniteScrollCode'
 import {PaginationCode} from './PaginationCode'
+import {UseFetchCode} from './UseFetchCode'
 
-export {InfiniteScrollCode,PaginationCode}
+export {InfiniteScrollCode,PaginationCode,UseFetchCode}
