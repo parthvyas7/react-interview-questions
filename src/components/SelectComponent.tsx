@@ -2,6 +2,7 @@ import InfiniteScroll from "./InfiniteScroll";
 import Pagination from "./Pagination";
 import UseFetch from "./UseFetch";
 import Welcome from "./Welcome";
+import UseWindowResize from "./UseWindowResize";
 
 const SelectComponent = ({ choice }: { choice: number }) => {
   switch (choice) {
@@ -12,7 +13,7 @@ const SelectComponent = ({ choice }: { choice: number }) => {
     case 2:
         return <UseFetch />;
     case 3:
-          return <Pagination />;
+          return <UseWindowResize />;
     default:
       return <Welcome />;
   }

@@ -61,17 +61,16 @@ function App() {
               <ListItem>
                 <ListItemButton onClick={() => handleSelect(1)}>
                   <ListItemText primary="Pagination" />
-                  <Chip label="New" />
                 </ListItemButton>
               </ListItem>
               <ListItem>
                 <ListItemButton onClick={() => handleSelect(2)}>
-                  <ListItemText primary="useFetch hook" />
+                  <ListItemText primary="useFetch hook" secondary="New" />
                 </ListItemButton>
               </ListItem>
               <ListItem>
                 <ListItemButton onClick={() => handleSelect(3)}>
-                  <ListItemText primary="useWindowresize hook" />
+                  <ListItemText primary="useWindowResize hook" secondary="New"/>
                 </ListItemButton>
               </ListItem>
               <ListItem>

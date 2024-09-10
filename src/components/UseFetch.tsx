@@ -66,8 +66,6 @@ const UseFetch = () => {
   const [showCode, setShowCode] = useState(false);
   const [copied, setCopied] = useState(false);
   const handleReset = () => {
-    // setLoading(false);
-    // setData([]);
   };
   const handleShowCode = () => {
     setShowCode(!showCode);
