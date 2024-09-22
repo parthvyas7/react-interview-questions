@@ -67,13 +67,36 @@ function App() {
               </ListItem>
               <ListItem>
                 <ListItemButton onClick={() => handleSelect(2)}>
-                  <ListItemText primary="useFetch hook" secondary="New" />
+                  <ListItemText primary="useFetch hook"/>
                 </ListItemButton>
               </ListItem>
               <ListItem>
                 <ListItemButton onClick={() => handleSelect(3)}>
                   <ListItemText
                     primary="useWindowResize hook"
+                  />
+                </ListItemButton>
+              </ListItem>
+              <ListItem>
+                <ListItemButton onClick={() => handleSelect(4)}>
+                  <ListItemText
+                    primary="Accordion"
+                    secondary="New"
+                  />
+                </ListItemButton>
+              </ListItem>
+              <ListItem>
+                <ListItemButton onClick={() => handleSelect(5)}>
+                  <ListItemText
+                    primary="Star Rating"
+                    secondary="New"
+                  />
+                </ListItemButton>
+              </ListItem>
+              <ListItem>
+                <ListItemButton onClick={() => handleSelect(6)}>
+                  <ListItemText
+                    primary="Tree Menu"
                     secondary="New"
                   />
                 </ListItemButton>

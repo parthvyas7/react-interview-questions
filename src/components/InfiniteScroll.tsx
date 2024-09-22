@@ -76,7 +76,7 @@ const InfiniteScroll = () => {
   return (
     <>
       <Box display="flex" justifyContent="space-between" marginBottom={2}>
-        <Typography variant="h4">Infinite scroll</Typography>
+        <Typography variant="h4" gutterBottom>Infinite scroll</Typography>
         <ButtonGroup aria-label="Basic button group">
           <Tooltip title="Copy code">
             <IconButton onClick={handleCopyCode}>

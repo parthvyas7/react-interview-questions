@@ -83,7 +83,7 @@ const UseFetch = () => {
   return (
     <>
       <Box display="flex" justifyContent="space-between" marginBottom={2}>
-        <Typography variant="h4">useFetch custom hook</Typography>
+        <Typography variant="h4" gutterBottom>useFetch custom hook</Typography>
         <ButtonGroup aria-label="Basic button group">
           <Tooltip title="Copy code">
             <IconButton onClick={handleCopyCode}>

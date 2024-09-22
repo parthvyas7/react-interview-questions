@@ -65,7 +65,7 @@ const UseWindowResize = () => {
   return (
     <>
       <Box display="flex" justifyContent="space-between" marginBottom={2}>
-        <Typography variant="h4">useWindowResize custom hook</Typography>
+        <Typography variant="h4" gutterBottom>useWindowResize custom hook</Typography>
         <ButtonGroup aria-label="Basic button group">
           <Tooltip title="Copy code">
             <IconButton onClick={handleCopyCode}>
