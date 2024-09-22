@@ -6,7 +6,7 @@ import {
   Tooltip,
   Paper,
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import CodeIcon from "@mui/icons-material/Code";
 import RestartAltIcon from "@mui/icons-material/RestartAlt";
